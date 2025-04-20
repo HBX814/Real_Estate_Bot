@@ -77,7 +77,7 @@ A smart and user-friendly Gradio app that assists with **property issue detectio
 ## 🎥 Working Demo
 
 > 📺 **Watch the full walkthrough here:**  
-[👉 Click to Watch Demo Video](https://docs.google.com/document/d/1hHQlSQzW66U4gL2aSMK-V57qrObD0HRVsOZk9RDtjKA/edit?usp=sharing)
+[👉 Click to Watch Demo Video](https://drive.google.com/file/d/1T9PB6TW7fCGEDY4Xlch9fSK5jeDImRVe/view?usp=sharing)
 
 ---
 
