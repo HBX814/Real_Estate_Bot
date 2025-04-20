@@ -1,7 +1,3 @@
-Here’s a detailed `README.md` file for your **Real Estate Bot** project based on the provided code:
-
----
-
 # 🏡 Real Estate Bot
 
 **Deployed at**: [https://huggingface.co/spaces/HarshBhati/Estate](https://huggingface.co/spaces/HarshBhati/Estate)
