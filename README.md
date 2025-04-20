@@ -49,8 +49,24 @@ A smart and user-friendly Gradio app that assists with **property issue detectio
 - Accepts a text question and optional location.
 - Uses FLAN-T5 to generate friendly and accurate tenancy responses.
 
-### 3. **Keyword Classification (Optional)**
-- Keywords like `rent`, `deposit`, `eviction` help classify user queries as FAQs.
+### 3. **Keyword-Based Query Classification**
+- A basic keyword matcher checks if a user input is likely a tenancy-related FAQ or an issue report.
+- Uses `difflib.get_close_matches` with a predefined list of tenancy keywords (e.g., `rent`, `lease`, `eviction`, `deposit`, etc.).
+
+---
+
+## 🤖 Logic Behind Agent Switching
+
+While the app provides two tabs for manual selection, the underlying **query classification logic** is built for **automated routing** between agents based on user input:
+
+- When a **text-only query** is submitted:
+  - The app analyzes the words using fuzzy matching against an FAQ keyword list.
+  - If **keywords match**, the input is routed to **Agent 2** (Tenancy FAQ Assistant).
+  - Otherwise, it is assumed to be describing a property issue and could be sent to **Agent 1**.
+
+- When an **image is uploaded**, it's automatically handled by **Agent 1**, since image input implies a physical issue.
+
+This design allows easy adaptation into a chatbot or voice-based assistant with auto-routing in future extensions.
 
 ---
 
@@ -71,6 +87,7 @@ A smart and user-friendly Gradio app that assists with **property issue detectio
 1. **Image is processed** using `BLIP` to create a caption.
 2. **Caption + user description** is passed into `FLAN-T5` for a helpful suggestion.
 3. For FAQs, user's query (and location, if given) is passed to `FLAN-T5` for a legal response.
+4. Optional: A keyword classification layer decides which agent should handle the query (in automated settings).
 
 ---
 
@@ -78,6 +95,8 @@ A smart and user-friendly Gradio app that assists with **property issue detectio
 
 > 📺 **Watch the full walkthrough here:**  
 [👉 Click to Watch Demo Video](https://drive.google.com/file/d/1T9PB6TW7fCGEDY4Xlch9fSK5jeDImRVe/view?usp=sharing)
+
+Make sure the video is publicly viewable with the “Anyone with the link can view” permission.
 
 ---
 
